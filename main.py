@@ -1,16 +1,9 @@
 import os
 import numpy as np
-import cv2
 import tensorflow as tf
 from flask import Flask,render_template,request
 from keras.preprocessing import image
 from werkzeug.utils import secure_filename
-
-
-'''config = tf.compat.v1.ConfigProto()
-config.gpu_options.per_process_gpu_memory_fraction = 0.8
-sess = tf.compat.v1.Session(config=config)
-tf.compat.v1.keras.backend.set_session(sess)'''
 
 tf.compat.v1.keras.backend.get_session
 app=Flask(__name__)
@@ -18,8 +11,6 @@ app=Flask(__name__)
 @app.route("/",methods=["GET"])
 def index():
     return render_template('index.html')
-
-
 
 def load_image(img_path):
 
